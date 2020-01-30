@@ -8,14 +8,21 @@ $message = '';
 $pseudo = '';
 
 if (!empty($_POST)) { // si le tableau n'est pas vide
-    if (!empty($_POST['titre_article'])){
+    if (!empty($_POST['titre_article'])) {
         $titrearticle = $_POST['titre_article'];
-    }if (!empty($_POST['message'])){
+    }
+    if (!empty($_POST['message'])) {
         $message = $_POST['message'];
-    }if (!empty($_POST['pseudo'])){
+    }
+    if (!empty($_POST['pseudo'])) {
         $pseudo = $_POST['pseudo'];
     }
-    articleCreate($bdd, $titrearticle, $message, $pseudo);
+    $creation = articleCreate($bdd, $titrearticle, $message, $pseudo);
+    if ($creation) {
+        echo 'ca marche';
+    }else {
+        echo 'faux';
+    }
 }
 
 ?>

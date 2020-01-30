@@ -12,11 +12,13 @@ $message = '';
 $pseudo = '';
 
 if (!empty($_POST)) { // si le tableau n'est pas vide
-    if (!empty($_POST['titre_article'])){
+    if (!empty($_POST['titre_article'])) {
         $titrearticle = $_POST['titre_article'];
-    }if (!empty($_POST['message'])){
+    }
+    if (!empty($_POST['message'])) {
         $message = $_POST['message'];
-    }if (!empty($_POST['pseudo'])){
+    }
+    if (!empty($_POST['pseudo'])) {
         $pseudo = $_POST['pseudo'];
     }
     articleModify($bdd, $titrearticle, $message, $pseudo, $numart);
@@ -29,18 +31,20 @@ $recuparticle = articleView($bdd, $numart);
     <div>
         <div>
             <label for="inputtitrearticle">Titre de l'article :</label>
-            <input type="text" id="inputtitrearticle" placeholder="" name="titre_article" value="<?php echo $recuparticle['titre']?>">
+            <input type="text" id="inputtitrearticle" placeholder="" name="titre_article"
+                   value="<?php echo $recuparticle['titre'] ?>">
         </div>
 
         <div>
             <label for="exampleFormControlTextarea1">Contenu :</label>
             <textarea id="exampleFormControlTextarea1" rows="10" cols="33" name="message"
-                      placeholder="Précisez"><?php echo $recuparticle['texte']?></textarea>
+                      placeholder="Précisez"><?php echo $recuparticle['texte'] ?></textarea>
         </div>
 
         <div>
             <label for="inputpseudo">Nom de l'auteur :</label>
-            <input type="text" id="inputpseudo" placeholder="" name="pseudo" value="<?php echo $recuparticle['auteur_id']?>">
+            <input type="text" id="inputpseudo" placeholder="" name="pseudo"
+                   value="<?php echo $recuparticle['auteur_id'] ?>">
         </div>
 
     </div>

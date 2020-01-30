@@ -10,10 +10,10 @@ debug($_POST);
 if (!empty($_POST)) {
     if (!empty($_POST['validation'])) {
         $validation = $_POST['validation'];
-        if ($validation == 'OUI') {
+        if ($validation === 'OUI') {
             articleDelete($bdd, $numart);
         }
-        if ($validation == 'NON'){
+        if ($validation === 'NON') {
             header('Location: /blog/', TRUE, 302);
             exit;
         }
@@ -30,7 +30,7 @@ if (!empty($_POST)) {
     <div>
         <input type="radio" name="validation" id="inlineRadio1"
                value="OUI">
-        <label for="inlineRadio1" >Oui</label>
+        <label for="inlineRadio1">Oui</label>
     </div>
     <div>
         <input type="radio" name="validation" id="inlineRadio2"

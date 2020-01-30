@@ -5,7 +5,8 @@ $articles = articleIndex($bdd);
 
 
 ?>
-
+<a href="category.php?name=loisirs"><input type="button" value="loisirs"></a>
+<a href="category.php?name=jesaispas"><input type="button" value="jesaispas"></a><br/>
 <a href="articleCreate.php"><input type="button" value="Nouvel article"></a>
 
 <?php foreach ($articles as $ligne): ?>

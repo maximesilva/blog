@@ -12,7 +12,7 @@ $article = articleView($bdd, $numart);
 //debug($idarticle);
 $commentaires = commentArticle($bdd, $numart);
 //var_dump($commentaires);
-if (!empty($commentaires)){
+if (!empty($commentaires)) {
     $disabled = 'disabled';
 }
 
@@ -26,7 +26,7 @@ if (!empty($commentaires)){
 
 <h3>Commentaire : </h3>
 <?php foreach ($commentaires as $ligne): ?>
-<p>Rédigé par <?= $ligne['pseudo'] ?> : </p>
-<p><?= $ligne['article'] ?></p>
-<?php endforeach;?>
+    <p>Rédigé par <?= $ligne['pseudo'] ?> : </p>
+    <p><?= $ligne['article'] ?></p>
+<?php endforeach; ?>
 <a href="articleDelete.php?id=<?php $numart ?>"><input type="button" value="Supprimer" <?php echo $disabled ?> </a>
